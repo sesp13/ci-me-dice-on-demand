@@ -1,15 +1,16 @@
 language: python
 python:
-  - '3.9'
+- '3.9'
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
 script:
-  - python3 -m pytest -v tests/test_dice.py
-deploy: &heroku
+- python3 -m pytest -v tests/test_dice.py
+deploy:
   provider: heroku
-  api_key: 
-    secure: AWWh88bIoNxCt8EoflY4LaNbA9IXgqdIP2J8DOwhSSc3sVk/5u2vJSjK4XCGTSH0bV7EJNb12lg9Si6cdTB8LtXk2mxQzPOdduqAicNVjIg1lAciXfdi8gIQdR5I6B67XRadrS6ns++RmnEwvjfzQiC/dMUwIiSNIkbBqSw5gYC+I7WtpyBhuOXLlW060fgSGh8wx68aoPff1Ds6XpDTUrwDVtDXuaW1oCWpySTmWBp67WbIo8/pTfi5tIA/w6NCxz67CfHSoy7u6xAFha6t3e9zOs5S8MNiy7V0m16LfbluU7EWzMzxR5EaqOKQm5T7V8ZKOKO9uboaW32E5Vd84mN0GDDW1z+e9JOjG5d5zD0VuGo3cv+6jP0BbboNelPY0SqeA5E2p7RbAwCUtH5+6ySapJXKtHxPeVUnQ8PwAk3FMV9v/lRz63JugRXh/8mSt9wYoB3iAwVdyxOsqqkhDyGXY5lR99jM0Jp7t7zZftHit2L581uJc6Cnx92kfr1kOKN1VJ4lUxhItNiSgpZ98qVo5Oy95xqhQ/xOMoEzerT0UHShH4xKaWIarDvv3im7lpwXOp+ZfHkauNqnnG/ysu1dBrizwzEChNeiaY+a6PBW/Idbtx8kWFagJQ6VYhwWSRVAGLqLFjUzwOBSZCig89XUi7uacEUasI8/NbRsc+o=
-  app: 
+  api_key: "$HEROKU_AUTH_TOKEN"
+  app:
     main: ci-homework-staging-sesp-13
     production: ci-homework-production-sesp-13
-
+notifications:
+  slack:
+    secure: m414wLrZjcN9lETnwTwjUwwzTTEznnFaUN6VE26CQJVZR6HSAhZFvfV/fn5S64ADrz+iqcIq+DdH+lFUwXgCP/1HSL1L9dsDJMtY4ZTQN+DddgpLJn6T1BpRTscaj3X3muvWzVMuUIGzoYwiq8QHsOOaIondHRD+N2u8gUYAR/cArQEsiPCdF0hmabBmsD98sf+R7BpCRe57rSWYw0w5UnFTCopdt3rQsmrMSGxRGI9HBlwfQ728V0zV8vC0+Hha5ExVp/njEUYrKNzpsEi6netUgEbHnf24/V6FWgqWo9VcNd7/Hr+ASNmZaT3pt1DqF5LV7Er9V+0glbgr6g4c5O8hFK28G3/jSSBDSijscZ1XBiTRlY/n5SpC8u7CZixmX5F4Omu2zp9jDsX2yErBJM6ooe2YwZovAxB6Zxu8CoxZXkCG484VKw7ZaiOG0mbtCKtbkiHOtNjOkY4TTfsx3T5p4iw9vnlyBz5rkzwkyAQXdQY2bX5ZW/yi/QAZ6XzvhAhkNiIDTyNvhTLM+zaWM9BH7N09skpxFqMrBnlq0A4TZy5Fxs1HKnLahrEqDjiRLN9NyJICKgiszmg9vraU0b7566waSFmzrDMdHN+hi4FjZuIzu0IuO4RoUqy1R/k40d29OkjM1A3H1/tWUWIx8W4JfuDigjgLDL32gyH3MSE=
