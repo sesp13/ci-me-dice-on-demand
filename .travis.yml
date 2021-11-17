@@ -1,21 +1,7 @@
-jobs:
-  include:
-    - stage: unit tests
-      script: "Running unit tests (1)"
-    - stage: unit tests
-      script: "Running unit tests (2)"
-    - stage: deploy to staging
-      script: skip
-      deploy: &heroku
-        provider: heroku
-        app: sf-stages-staging
-        api_key: $HEROKU_AUTH_TOKEN
-    - stage: test staging
-      script: 'curl https://ci-homework-staging-sesp-13.herokuapp.com/'
-    - stage: deploy to production
-      script: skip
-      deploy:
-        <<: *heroku
-        app: sf-stages-production
-    - stage: test production
-      script: 'curl https://ci-homework-production-sesp-13.herokuapp.com/'
+language: python
+python:
+  - '3.9'
+install:
+  - pip install -r requirements.txt
+script:
+  - pytest -v tests/test_dice.py

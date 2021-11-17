@@ -42,4 +42,4 @@ flask run
 1. First off, enter the number of sides of your dice. (Some games might require you to use 20-sided dice)
 2. Now, click on the `roll` button!
 3. You should see a message on the screen - "You Rolled a ..."
-4. That's it! 
+4. That's it!
