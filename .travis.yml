@@ -18,6 +18,16 @@ jobs:
           all_branches: true
     - stage: Test staging
       script: curl https://ci-homework-staging-sesp-13.herokuapp.com
+    - stage: Deploy to production
+      script: skip
+      deploy:
+        provider: heroku
+        app: ci-homework-production-sesp-13
+        api_key: '$HEROKU_AUTH_TOKEN'
+        on:
+          all_branches: true
+    - stage: Test production
+      script: curl https://ci-homework-production-sesp-13.herokuapp.com
 notifications:
   slack:
     secure: m414wLrZjcN9lETnwTwjUwwzTTEznnFaUN6VE26CQJVZR6HSAhZFvfV/fn5S64ADrz+iqcIq+DdH+lFUwXgCP/1HSL1L9dsDJMtY4ZTQN+DddgpLJn6T1BpRTscaj3X3muvWzVMuUIGzoYwiq8QHsOOaIondHRD+N2u8gUYAR/cArQEsiPCdF0hmabBmsD98sf+R7BpCRe57rSWYw0w5UnFTCopdt3rQsmrMSGxRGI9HBlwfQ728V0zV8vC0+Hha5ExVp/njEUYrKNzpsEi6netUgEbHnf24/V6FWgqWo9VcNd7/Hr+ASNmZaT3pt1DqF5LV7Er9V+0glbgr6g4c5O8hFK28G3/jSSBDSijscZ1XBiTRlY/n5SpC8u7CZixmX5F4Omu2zp9jDsX2yErBJM6ooe2YwZovAxB6Zxu8CoxZXkCG484VKw7ZaiOG0mbtCKtbkiHOtNjOkY4TTfsx3T5p4iw9vnlyBz5rkzwkyAQXdQY2bX5ZW/yi/QAZ6XzvhAhkNiIDTyNvhTLM+zaWM9BH7N09skpxFqMrBnlq0A4TZy5Fxs1HKnLahrEqDjiRLN9NyJICKgiszmg9vraU0b7566waSFmzrDMdHN+hi4FjZuIzu0IuO4RoUqy1R/k40d29OkjM1A3H1/tWUWIx8W4JfuDigjgLDL32gyH3MSE=
