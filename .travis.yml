@@ -7,7 +7,7 @@ script:
   - python3 -m pytest -v tests/test_dice.py
 deploy: &heroku
   provider: heroku
-  api_key: $HEROKU_AUTH_TOKEN
+  api_key: secure: "RQPHgrOyRE+coJbHpp4i8iRlJfp2/vU0etxkla15jOcertBlIjAG0giMtWluVjpHrF0DD3dK6toMzrg5Vb6DQdcbCjWuw1CLGT+ZeW6/TruRIDh5Wxg+D1gBlvyq0/1JoAbWmrvqaGdMTI4ioMzNrVfa7w9BGtTEmzEtm5lwzwtwSiX/r6qcPZqGpcrOyKGBHC2b65FO/g6qma/mZIIPeNOGkRfvrtmIg7aObJbyflM1uut0Q+Gq56Afcfb63OdqKWogZnz3xsgPSDhMUgaCnqf33kQgcvHlJFaRREUJjs/ZY5XSWeyNyCd5OYR2HPcCHL0d3C2xuyBkchnr/jwtagq9t3Rt+cXLdKzxsN/Y7mXxjJ1T8ovpUTbO3jxezKFRan3OQQ4w2r3dMZ3EvktgVW8zv7h05PumKorI6O2rYQnITWi4F29DPJnZ69GTfR4P9W3xbQD0xvJWvujFFxi/z6Ve5jjrfg/AXb0GEywDKRZbI2EHy6yvVkf1ZHxmOeFeqgBtYYWPYCfl3wQ/5DOIdtL4iw2bUnytLsr0GmwU1gLgQFhX6Omh6Q8rveIs8A5iK5l1V/Ubv+ruF6pGrEEn4ZcsltV84T6JPr8C2jw+BTvGWJgMMEncej7qTjeR3JRkzjvBthakcRgaIg/qxSlMYk1a2VZc1ZAtaQTvwVo1auY="
   app: 
     main: ci-homework-staging-sesp-13
     production: ci-homework-production-sesp-13
