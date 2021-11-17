@@ -4,4 +4,4 @@ python:
 install:
   - pip install -r requirements.txt
 script:
-  - pytest -v tests/test_dice.py
+  - python3 -v tests/test_dice.py
