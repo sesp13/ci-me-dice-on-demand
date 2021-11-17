@@ -7,8 +7,8 @@ script:
   - python3 -m pytest -v tests/test_dice.py
 deploy: &heroku
   provider: heroku
-  app: ci-homework-production-sesp-13
   api_key: $HEROKU_AUTH_TOKEN
-  on:
-  -branch: main
+  app: 
+    main: ci-homework-staging-sesp-13
+    production: ci-homework-production-sesp-13
 
